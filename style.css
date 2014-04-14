@@ -1,0 +1,29 @@
+@charset "UTF-8";
+img.fullscreen {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .branding {
+            text-align:center;
+        }
+
+        .popup {
+            color: darkgrey;
+            text-decoration: none;
+        }
+
+        .webding {
+            font-family: Webdings;
+        }
+
+        #h-type-inf p {
+            margin-top: .75em;
+            margin-bottom: .75em;
+        }
+        
+        .playerlist li {
+            height:2.4em;
+            line-height:2.4em;
+            font-size:1.2em;
+        }

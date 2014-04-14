@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hide and Seek Proto</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" id="home">
+        <div data-role="content">
+            <div class="branding">
+                <h1>
+                    HIDE<br/>
+                    --n--<br/>
+                    SEEK
+                </h1>
+            </div>
+            <br />
+            <ul data-role="listview">
+                <li>
+                    <a href="#login-host">
+                        <h2>Host Match</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#login-join">
+                        <h2>Join Match</h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" id="login-host">
+        <header data-role="header">
+            <a href="#home" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
+            <h2>HIDE -n- SEEK</h2>
+        </header>
+        <div data-role="content">
+            <h2>Host a match of HIDE -n- SEEK</h2>
+            <a href="#h-id-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Match name: <span class="webding">i</span></a>
+            <div data-role="popup" class="ui-content" id="h-id-inf">
+                Create a unique name for this match which others can see when joining a round.
+            </div>
+            <input type="text" name="h-id" id="h-id" value="" />
+            <br />
+            <a href="#h-password-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Password: <span class="webding">i</span></a>
+            <div data-role="popup" id="h-password-inf" class="ui-content">
+                Create a password that users must enter in order to join this match.
+            </div>
+            <input type="text" name="h-password" id="h-type" value="" />
+            <br />
+            <a href="#h-type-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Type: <span class="webding">i</span></a>
+            <div data-role="popup" id="h-type-inf" class="ui-content">
+                <p>
+                    Pick the game type.
+                </p>
+                <p>
+                    <strong>Hide and Seek:</strong> pick one or more players to be "it." Those players will receive hints about the locations of other players.
+                </p>
+                <p>
+                    <strong>Paintball:</strong> All players receive hints about the locations of all other players. Great for free-for-all paintball and airsoft.
+                </p>
+                <p>
+                    <strong>Team Paintball:</strong> Players are divided into two team. Each player sees the precice locations of all teamates and receives hints about the locations of opposing players.
+                </p>
+                <p>
+                    <strong>Sandbox:</strong> All players may see the locations of all others. Great for keeping track of a group.
+                </p>
+            </div>
+            <fieldset data-role="controlgroup">
+                <legend></legend>
+                <input type="radio" name="h-type" id="h-type-hns" value="hns" checked="checked" />
+                <label for="h-type-hns">Hide and Seek</label>
+                <input type="radio" name="h-type" id="h-type-paintball" value="paintball" />
+                <label for="h-type-paintball">Paintball</label>
+                <input type="radio" name="h-type" id="h-type-team" value="team" />
+                <label for="h-type-team">Team Paintball</label>
+                <input type="radio" name="h-type" id="h-type-sandbox" value="sandbox" />
+                <label for="h-type-sandbox">Sandbox</label>
+            </fieldset>
+            <br />
+            <a href="#config-host" data-role="button">Host Match</a>
+        </div>
+    </div>
+
+    <div id="config-host" data-role="page">
+        <header data-role="header">
+            <h2>HIDE -n- SEEK: Host Match</h2>
+        </header>
+        <div data-role="content">
+            <h3>Match Settings: </h3>
+            <a href="#count-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Counting time: <span class="webding">i</span></a>
+            <div data-role="popup" class="ui-content" id="count-time-inf">
+                Enter the amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching.
+            </div>
+            <input type="number" name="count-time" id="count-time" value="">
+            <a href="#search-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Searching time: <span class="webding">i</span></a>
+            <div data-role="popup" class="ui-content" id="search-time-inf">
+                Enter the amount of time (in minutes or min:sec) for seeker[s] to look for hiders.
+            </div>
+            <input type="number" name="search-time" id="number-pattern" value="">
+            <br />
+            <h3>Players: </h3>
+            <ul data-role="listview" class="playerlist">
+                <li>Host
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside">
+                        <legend></legend>
+                        <input type="radio" name="config-p1" id="config-p1-hider" checked="checked" />
+                        <label for="config-p1-hider">Hider</label>
+                        <input type="radio" name="config-p1" id="config-p1-seeker" />
+                        <label for="config-p1-seeker">Seeker</label>
+                        <input type="radio" name="config-p1" id="config-p1-supervisor" />
+                        <label for="config-p1-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+                <li>Player 1
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside">
+                        <legend></legend>
+                        <input type="radio" name="config-p2" id="config-p2-hider" checked="checked" />
+                        <label for="config-p2-hider">Hider</label>
+                        <input type="radio" name="config-p2" id="config-p2-seeker" />
+                        <label for="config-p2-seeker">Seeker</label>
+                        <input type="radio" name="config-p2" id="config-p2-supervisor" />
+                        <label for="config-p2-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+                <li>Player 2
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside">
+                        <legend></legend>
+                        <input type="radio" name="config-p3" id="config-p3-hider" checked="checked" />
+                        <label for="config-p3-hider">Hider</label>
+                        <input type="radio" name="config-p3" id="config-p3-seeker" />
+                        <label for="config-p3-seeker">Seeker</label>
+                        <input type="radio" name="config-p3" id="config-p3-supervisor" />
+                        <label for="config-p3-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+            </ul>
+            <br />
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#active" data-role="button">Begin Match</a> 
+                </div>
+                <div class="ui-block-b">
+                    <a href="#login-host" data-role="button">Cancel Match</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="page" id="login-join">
+        <header data-role="header">
+            <a href="#home" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
+            <h2>HIDE -n- SEEK</h2>
+        </header>
+        <div data-role="content">
+            <h2>Join a match of HIDE -n- SEEK</h2>
+            <br />
+            <fieldset data-role="controlgroup" data-filter="true">
+                <legend></legend>
+                <input type="radio" name="j-games" id="j-game1" value="1" checked="checked" />
+                <label for="j-game1">Game 1</label>
+                <input type="radio" name="j-games" id="j-game2" value="2" />
+                <label for="j-game2">Game 2</label>
+                <input type="radio" name="j-games" id="j-game3" value="3" />
+                <label for="j-game3">Maradox's Game</label>
+                <input type="radio" name="j-games" id="j-game4" value="4" />
+                <label for="j-game4">Zach's Game</label>
+            </fieldset>
+            <br />
+            <input type="text" name="j-password" id="j-password" value="" />
+            <label for="j-password">Password: </label>
+            <br />
+            <a href="#config-join" data-role="button">Join Match</a>
+        </div>
+    </div>
+
+    <div id="config-join" data-role="page">
+        <header data-role="header">
+            <h2>HIDE -n- SEEK: Waiting for Host</h2>
+        </header>
+        <div data-role="content">
+            <h3>Match Settings: </h3>
+            <a href="#j-count-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Counting time: <span class="webding">i</span></a>
+            <div data-role="popup" class="ui-content" id="j-count-time-inf">
+                The amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching. The host will set this.
+            </div>
+            <br />
+            1:45
+            <br />
+            <br />
+            <a href="#j-search-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Searching time: <span class="webding">i</span></a>
+            <div data-role="popup" class="ui-content" id="j-search-time-inf">
+                The amount of time (in minutes or min:sec) for seeker[s] to look for hiders. The host will set this.
+            </div>
+            <br />
+            20
+            <br />
+            <h3>Players: </h3>
+            <ul data-role="listview" class="playerlist">
+                <li>Host
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside ui-state-disabled">
+                        <legend></legend>
+                        <input type="radio" name="j-config-p1" id="j-config-p1-hider" checked="checked" />
+                        <label for="j-config-p1-hider">Hider</label>
+                        <input type="radio" name="j-config-p1" id="j-config-p1-seeker" />
+                        <label for="j-config-p1-seeker">Seeker</label>
+                        <input type="radio" name="j-config-p1" id="j-config-p1-supervisor" />
+                        <label for="j-config-p1-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+                <li>Player 1
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside">
+                        <legend></legend>
+                        <input type="radio" name="j-config-p2" id="j-config-p2-hider" checked="checked" />
+                        <label for="j-config-p2-hider">Hider</label>
+                        <input type="radio" name="j-config-p2" id="j-config-p2-seeker" />
+                        <label for="j-config-p2-seeker">Seeker</label>
+                        <input type="radio" name="j-config-p2" id="j-config-p2-supervisor" />
+                        <label for="j-config-p2-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+                <li>Player 2
+                    <fieldset data-role="controlgroup" data-type="horizontal" class="ui-mini ui-li-aside ui-state-disabled">
+                        <legend></legend>
+                        <input type="radio" name="j-config-p3" id="j-config-p3-hider" checked="checked" />
+                        <label for="j-config-p3-hider">Hider</label>
+                        <input type="radio" name="j-config-p3" id="j-config-p3-seeker" />
+                        <label for="j-config-p3-seeker">Seeker</label>
+                        <input type="radio" name="j-config-p3" id="j-config-p3-supervisor" />
+                        <label for="j-config-p3-supervisor">Supervisor</label>
+                    </fieldset>
+                </li>
+            </ul>
+            <br />
+            <p>
+                Waiting for host to begin round.
+            </p>
+            <a href="#login-join" data-role="button">Leave Match</a>
+        </div>
+    </div>
+
+    <div id="active" data-role="page">
+        <header data-role="header">
+            <h2>HIDE -n- SEEK: Game 1</h2>
+        </header>
+        <div data-role="content">
+            <p><strong>Search time remaining:</strong> 15:32</p>
+            <br />
+            <h1>WARNING!</h1>
+            <h4>Seeker approaching</h4>
+            <br />
+            <br />
+            <br />
+            [Minimap goes here?]
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="#active" data-role="button">Give up</a> 
+                </div>
+                <div class="ui-block-b">
+                    <a href="#login-host" data-role="button">View map</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
