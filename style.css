@@ -10,9 +10,62 @@ img.fullscreen {
 	max-height: 100%;
 }
 
-.branding {
-	text-align:center;
+/*#region HOME */
+#home .branding {
+    background: url(logo-home.png) no-repeat;
+    background-size: contain;
+    background-position: center center;
+    text-indent: -9000px;
+    font-size: 0px;
+    height: 150px;
+    margin: 40px 0 20px 0;
 }
+
+#home li a {
+	background-color:transparent;
+	border:none;
+    background-size: 200px;  
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 200px;
+    text-indent: -9000px;
+    font-size: 0px;
+}
+
+#home li a::after {
+	content: "";
+	width:0;
+	height:0;
+	background:none;
+}
+
+.btn-host {
+    background-image: url(btn-host.png);
+}
+.btn-host:active {
+    background-image: url(btn-host-press.png);
+}
+.btn-join {
+    background-image: url(btn-join.png);
+}
+.btn-join:active {
+    background-image: url(btn-join-press.png);
+}
+
+#home .btn-settings {
+	background: url("icon-settings.png") no-repeat center center;
+	border: none;
+	background-size: 40px;
+	text-indent: -9000px;
+	font-size: 0px;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+/*#endregion */
 
 .popup {
 	color: darkgrey;
