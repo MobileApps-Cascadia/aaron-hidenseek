@@ -1,13 +1,67 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 [data-role="page"] {
-	background: url(bg.jpg) no-repeat;
-	background-size:cover;
+    background: url(bg.jpg) no-repeat;
+    background-size:cover;
 }
 
 img.fullscreen {
-	max-width: 100%;
-	max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header.ui-header[data-role="header"] {
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: rgba(255,255,255,0.9);
+    text-shadow: none;
+    font-weight: 100;
+    font-family: "Aleo Light", Aleo, "Segoe UI light", arial;
+    font-size: 28px;
+}
+header .ui-title {
+    background: none !important;
+}
+
+header .logo-small {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    display: block;
+    height: 68px;
+    width: 70px;
+    background: url(logo-icon.png) no-repeat center center;
+    background-size: contain;
+}
+
+.no-text {
+    font-size: 0!important;
+    text-indent: -9000px;
+}
+
+h3 {
+    text-shadow: none;
+    color: #feb41c;
+    font-family: Roboto, "segoe ui", arial;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+[data-role="content"] {
+    margin: 20px;
+}
+
+a.help-icon {
+    position: relative;
+    top: -50px;
+    display: block;
+    width: 100%;
+    height: 25px;
+    margin-bottom: -26px;
+    background: url(icon-help.png) no-repeat right center;
+    background-size: contain;
+    font-size: 0;
+    text-indent: -9000px;
 }
 
 /*#region HOME */
@@ -22,8 +76,8 @@ img.fullscreen {
 }
 
 #home li a {
-	background-color:transparent;
-	border:none;
+    background-color:transparent;
+    border:none;
     background-size: 200px;  
     background-position: center center;
     background-repeat: no-repeat;
@@ -33,10 +87,10 @@ img.fullscreen {
 }
 
 #home li a::after {
-	content: "";
-	width:0;
-	height:0;
-	background:none;
+    content: "";
+    width:0;
+    height:0;
+    background:none;
 }
 
 .btn-host {
@@ -53,36 +107,36 @@ img.fullscreen {
 }
 
 #home .btn-settings {
-	background: url("icon-settings.png") no-repeat center center;
-	border: none;
-	background-size: 40px;
-	text-indent: -9000px;
-	font-size: 0px;
-	width: 40px;
-	height: 40px;
-	position: absolute;
-	right: 20px;
-	bottom: 20px;
+    background: url("icon-settings.png") no-repeat center center;
+    border: none;
+    background-size: 40px;
+    text-indent: -9000px;
+    font-size: 0px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 /*#endregion */
 
-.popup {
-	color: darkgrey;
-	text-decoration: none;
+.help-icon {
+    color: darkgrey;
+    text-decoration: none;
 }
 
 .webding {
-	font-family: Webdings;
+    font-family: Webdings;
 }
 
 #h-type-inf p {
-	margin-top: .75em;
-	margin-bottom: .75em;
+    margin-top: .75em;
+    margin-bottom: .75em;
 }
 
 .playerlist li {
-	height:2.4em;
-	line-height:2.4em;
-	font-size:1.2em;
+    height:2.4em;
+    line-height:2.4em;
+    font-size:1.2em;
 }

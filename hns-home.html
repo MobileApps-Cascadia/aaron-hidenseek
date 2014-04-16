@@ -5,9 +5,9 @@
     <title>Hide and Seek Proto</title>
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="style.css">
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -34,31 +34,33 @@
                     </a>
                 </li>
             </ul>
-		    <a class="btn-settings" data-role="button" href="">Settings</a>
+            <a class="btn-settings" data-role="button" href="">Settings</a>
         </div>
     </div>
     
 
     <div data-role="page" id="login-host">
         <header data-role="header">
-            <a href="#home" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
-            <h2>HIDE -n- SEEK</h2>
+            <a href="#home" class="logo-small">HIDE -n- SEEK</a>
+            <h2>Create Match</h2>
         </header>
         <div data-role="content">
-            <h2>Host a match of HIDE -n- SEEK</h2>
-            <a href="#h-id-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Match name: <span class="webding">i</span></a>
+            <h3>Match Name</h3>
+            <a href="#h-id-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="h-id-inf">
                 Create a unique name for this match which others can see when joining a round.
             </div>
             <input type="text" name="h-id" id="h-id" value="" />
             <br />
-            <a href="#h-password-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Password: <span class="webding">i</span></a>
+            <h3>Password: </h3>
+            <a href="#h-password-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" id="h-password-inf" class="ui-content">
                 Create a password that users must enter in order to join this match.
             </div>
             <input type="text" name="h-password" id="h-type" value="" />
             <br />
-            <a href="#h-type-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Type: <span class="webding">i</span></a>
+            <h3>Type: </h3>
+            <a href="#h-type-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" id="h-type-inf" class="ui-content">
                 <p>
                     Pick the game type.
@@ -88,22 +90,23 @@
                 <label for="h-type-sandbox">Sandbox</label>
             </fieldset>
             <br />
-            <a href="#config-host" data-role="button">Host Match</a>
+            <a href="#config-host" class="btn-host" data-role="button">Host Match</a>
         </div>
     </div>
 
     <div id="config-host" data-role="page">
         <header data-role="header">
-            <h2>HIDE -n- SEEK: Host Match</h2>
+            <h2>Config Match</h2>
         </header>
         <div data-role="content">
-            <h3>Match Settings: </h3>
-            <a href="#count-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Counting time: <span class="webding">i</span></a>
+            <h3>Counting time: </h3>
+            <a href="#count-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="count-time-inf">
                 Enter the amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching.
             </div>
             <input type="number" name="count-time" id="count-time" value="">
-            <a href="#search-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Searching time: <span class="webding">i</span></a>
+            <h3>Searching time: </h3>
+            <a href="#search-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="search-time-inf">
                 Enter the amount of time (in minutes or min:sec) for seeker[s] to look for hiders.
             </div>
@@ -161,11 +164,9 @@
     <div data-role="page" id="login-join">
         <header data-role="header">
             <a href="#home" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
-            <h2>HIDE -n- SEEK</h2>
+            <h2>Join Match</h2>
         </header>
         <div data-role="content">
-            <h2>Join a match of HIDE -n- SEEK</h2>
-            <br />
             <fieldset data-role="controlgroup" data-filter="true">
                 <legend></legend>
                 <input type="radio" name="j-games" id="j-game1" value="1" checked="checked" />
@@ -181,17 +182,18 @@
             <input type="text" name="j-password" id="j-password" value="" />
             <label for="j-password">Password: </label>
             <br />
-            <a href="#config-join" data-role="button">Join Match</a>
+            <a href="#config-join" class="btn-join" data-role="button">Join Match</a>
         </div>
     </div>
 
     <div id="config-join" data-role="page">
         <header data-role="header">
-            <h2>HIDE -n- SEEK: Waiting for Host</h2>
+            <h2>Joining Match</h2>
         </header>
         <div data-role="content">
             <h3>Match Settings: </h3>
-            <a href="#j-count-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Counting time: <span class="webding">i</span></a>
+            <h3>Counting time: </h3>
+            <a href="#j-count-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="j-count-time-inf">
                 The amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching. The host will set this.
             </div>
@@ -199,7 +201,8 @@
             1:45
             <br />
             <br />
-            <a href="#j-search-time-inf" data-rel="popup" data-transition="pop" class="popup" title="Learn more">Searching time: <span class="webding">i</span></a>
+            <h3>Searching time: </h3>
+            <a href="#j-search-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="j-search-time-inf">
                 The amount of time (in minutes or min:sec) for seeker[s] to look for hiders. The host will set this.
             </div>
@@ -255,6 +258,7 @@
             <h2>HIDE -n- SEEK: Game 1</h2>
         </header>
         <div data-role="content">
+            This screen is not visually styled.
             <p><strong>Search time remaining:</strong> 15:32</p>
             <br />
             <h1>WARNING!</h1>
