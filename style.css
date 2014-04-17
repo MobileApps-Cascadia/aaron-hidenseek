@@ -21,6 +21,10 @@ header.ui-header[data-role="header"] {
     font-family: "Aleo Light", Aleo, "Segoe UI light", arial;
 }
 
+#config-host .ui-title {
+    margin: 0 50px;
+}
+
 .ui-header .ui-title {
     margin: 0 5% 0 80px;
     padding: 16px 0;
@@ -265,8 +269,25 @@ a.btn-begin, a.btn-cancel {
 .ui-popup-container [data-role="popup"] {
     border-radius: 0;
     border: none;
-    background: rgba(50, 50, 50, 0.8);
+    background: rgba(50, 50, 50, 0.9);
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     padding: 40px;
+}
+
+.ui-popup-container [data-role="popup"] a.btn-ok {
+    font-size:0;
+    text-indent:-9000px;
+    display: block;
+    position: relative;
+    width: 180px;
+    height: 42px;
+    margin-left: -90px;
+    margin-top: 30px;
+    left: 50%;
+    background: url(btn-ok.png) no-repeat center bottom;
+    background-size: contain;
+}
+.ui-popup-container [data-role="popup"] a.btn-ok:active {
+    background-image: url(btn-ok-press.png);
 }

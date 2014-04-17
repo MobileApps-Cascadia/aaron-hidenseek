@@ -49,6 +49,7 @@
             <a href="#h-id-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="h-id-inf">
                 Create a unique name for this match which others can see when joining a round.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <input type="text" name="h-id" id="h-id" value="" />
             <br />
@@ -56,6 +57,7 @@
             <a href="#h-password-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" id="h-password-inf" class="ui-content">
                 Create a password that users must enter in order to join this match.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <input type="text" name="h-password" id="h-type" value="" />
             <br />
@@ -77,6 +79,7 @@
                 <p>
                     <strong>Sandbox:</strong> All players may see the locations of all others. Great for keeping track of a group.
                 </p>
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <select name="h-type-select" id="h-type-select">
                 <legend></legend>
@@ -99,12 +102,14 @@
             <a href="#count-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="count-time-inf">
                 Enter the amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <input type="number" name="count-time" id="count-time" value="">
             <h3>Searching time: </h3>
             <a href="#search-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="search-time-inf">
                 Enter the amount of time (in minutes or min:sec) for seeker[s] to look for hiders.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <input type="number" name="search-time" id="number-pattern" value="">
             <br />
@@ -159,8 +164,8 @@
     
     <div data-role="page" id="login-join">
         <header data-role="header">
-            <a href="#home" class="ui-btn ui-icon-home ui-btn-corner-all ui-btn-icon-notext">Home</a>
-            <h2>Join Match</h2>
+            <a href="#home" data-role="none" class="logo-small">HIDE -n- SEEK</a>
+            <h2>Join Match (Not styled)</h2>
         </header>
         <div data-role="content">
             <fieldset data-role="controlgroup" data-filter="true">
@@ -175,8 +180,8 @@
                 <label for="j-game4">Zach's Game</label>
             </fieldset>
             <br />
+            <h3>Password: </h3>
             <input type="text" name="j-password" id="j-password" value="" />
-            <label for="j-password">Password: </label>
             <br />
             <a href="#config-join" class="btn-join" data-role="button">Join Match</a>
         </div>
@@ -184,14 +189,14 @@
 
     <div id="config-join" data-role="page">
         <header data-role="header">
-            <h2>Joining Match</h2>
+            <h2>Joining Match (Not styled)</h2>
         </header>
         <div data-role="content">
-            <h3>Match Settings: </h3>
             <h3>Counting time: </h3>
             <a href="#j-count-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="j-count-time-inf">
                 The amount of time (in minutes or min:sec) for dispersion of hiders before the seeker[s] can begin searching. The host will set this.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <br />
             1:45
@@ -201,6 +206,7 @@
             <a href="#j-search-time-inf" class="help-icon" data-rel="popup" data-transition="pop" title="Learn more">i</a>
             <div data-role="popup" class="ui-content" id="j-search-time-inf">
                 The amount of time (in minutes or min:sec) for seeker[s] to look for hiders. The host will set this.
+                <a class="btn-ok" href="#" data-rel="back">OK</a>
             </div>
             <br />
             20
@@ -251,10 +257,10 @@
 
     <div id="active" data-role="page">
         <header data-role="header">
-            <h2>HIDE -n- SEEK: Game 1</h2>
+            <a href="#home" data-role="none" class="logo-small">HIDE -n- SEEK</a>
+            <h2>Game 1 (Not styled)</h2>
         </header>
         <div data-role="content">
-            This screen is not visually styled.
             <p><strong>Search time remaining:</strong> 15:32</p>
             <br />
             <h1>WARNING!</h1>
