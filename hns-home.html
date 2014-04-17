@@ -78,17 +78,13 @@
                     <strong>Sandbox:</strong> All players may see the locations of all others. Great for keeping track of a group.
                 </p>
             </div>
-            <fieldset data-role="controlgroup">
+            <select name="h-type-select" id="h-type-select">
                 <legend></legend>
-                <input type="radio" name="h-type" id="h-type-hns" value="hns" checked="checked" />
-                <label for="h-type-hns">Hide and Seek</label>
-                <input type="radio" name="h-type" id="h-type-paintball" value="paintball" />
-                <label for="h-type-paintball">Paintball</label>
-                <input type="radio" name="h-type" id="h-type-team" value="team" />
-                <label for="h-type-team">Team Paintball</label>
-                <input type="radio" name="h-type" id="h-type-sandbox" value="sandbox" />
-                <label for="h-type-sandbox">Sandbox</label>
-            </fieldset>
+                <option value="hns">Hide and Seek</option>
+                <option value="paintball">Paintball</option>
+                <option value="team">Team Paintball</option>
+                <option value="sandbox">Sandbox</option>
+            </select>
             <br />
             <a href="#config-host" class="btn-host" data-role="button">Host Match</a>
         </div>
@@ -152,10 +148,10 @@
             <br />
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <a href="#active" data-role="button">Begin Match</a> 
+                    <a href="#active" class="btn-begin" data-role="button">Begin Match</a> 
                 </div>
                 <div class="ui-block-b">
-                    <a href="#login-host" data-role="button">Cancel Match</a>
+                    <a href="#login-host" class="btn-cancel" data-role="button">Cancel Match</a>
                 </div>
             </div>
         </div>
@@ -273,7 +269,7 @@
             <br />
             <div class="ui-grid-a">
                 <div class="ui-block-a">
-                    <a href="#active" data-role="button">Give up</a> 
+                    <a href="#home" data-role="button">Give up</a> 
                 </div>
                 <div class="ui-block-b">
                     <a href="#login-host" data-role="button">View map</a>

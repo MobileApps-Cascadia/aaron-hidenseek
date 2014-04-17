@@ -2,7 +2,8 @@
 
 [data-role="page"] {
     background: url(bg.jpg) no-repeat;
-    background-size:cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 img.fullscreen {
@@ -11,16 +12,21 @@ img.fullscreen {
 }
 
 header.ui-header[data-role="header"] {
-    background: rgba(0, 0, 0, 0.4);
     border: none;
+    background: rgba(0, 0, 0, 0.4);
     color: rgba(255,255,255,0.9);
     text-shadow: none;
     font-weight: 100;
-    font-family: "Aleo Light", Aleo, "Segoe UI light", arial;
     font-size: 28px;
+    font-family: "Aleo Light", Aleo, "Segoe UI light", arial;
 }
-header .ui-title {
+
+.ui-header .ui-title {
+    margin: 0 5% 0 80px;
+    padding: 16px 0;
     background: none !important;
+    font-weight: 100;
+    font-size: 36px;
 }
 
 header .logo-small {
@@ -28,36 +34,105 @@ header .logo-small {
     top: 5px;
     left: 12px;
     display: block;
-    height: 68px;
     width: 70px;
+    height: 68px;
     background: url(logo-icon.png) no-repeat center center;
+    -moz-background-size: contain;
     background-size: contain;
-    font-size: 0!important;
     text-indent: -9000px;
+    font-size: 0!important;
 }
 
 h3 {
-    text-shadow: none;
+    margin: 20px 0;
     color: #feb41c;
-    font-family: Roboto, "segoe ui", arial;
+    text-shadow: none;
     font-weight: 300;
     font-size: 24px;
-    margin: 20px 0;
+    font-family:Roboto, 'Segoe UI', Arial;
+}
+
+/*#region CONTROLS*/
+
+/* Basic formatting of text inputs and selectors*/
+[data-role="content"] .ui-input-text,
+[data-role="listview"].playerlist > li,
+.ui-select .ui-btn,
+.ui-select .ui-btn:active,
+.ui-select .ui-btn:hover {
+    border: none;
+    background: none;
+    box-shadow: none;
+    text-align: left;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+    font-weight:300;
+    font-family:Roboto, 'Segoe UI', Arial;
 }
 
 [data-role="content"] .ui-input-text {
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    background: none;
-    box-shadow: none;
-    border: aliceblue;
+    padding: 0 10px 0 10px;
     background: url(textfield.png) no-repeat center bottom;
+    -moz-background-size: contain;
     background-size: contain;
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 20px;
-    padding: 0 20px 0 20px;
 }
+
+.ui-select .ui-btn,
+.ui-select .ui-btn:active,
+.ui-select .ui-btn:hover,
+[data-role="listview"].playerlist .ui-radio {
+    border:0 solid rgba(200, 200, 200, 0.3);
+    border-top-width:3px;
+    border-bottom-width:1px;
+}
+
+[data-role="listview"].playerlist .ui-radio {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ui-select .ui-btn:active,
+.ui-select .ui-btn:hover {
+    background:rgba(255, 255, 255, 0.1);
+    border-color: rgba(200, 200, 200, 0.3); /*Override jQuery UI*/
+}
+
+[data-role="listview"].playerlist > li {
+    border: 0 solid rgba(200, 200, 200, 0.3);
+    border-bottom-width: 1px;
+    margin: 0 15px;
+}
+[data-role="listview"].playerlist > li.ui-first-child {
+    border-top-width: 3px;
+}
+[data-role="listview"].playerlist .ui-radio label {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    padding: .9em 1.1em;
+}
+
+[data-role="listview"].playerlist [role="heading"] {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+[data-role="listview"].playerlist .ui-radio label.ui-radio-on {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+[data-role="listview"].playerlist .ui-radio input {
+    display: none;
+}
+
+/*#endregion*/
 
 [data-role="content"] {
     margin: 20px;
@@ -67,69 +142,102 @@ a.help-icon {
     position: relative;
     top: -50px;
     display: block;
+    margin-bottom: -26px;
     width: 100%;
     height: 25px;
-    margin-bottom: -26px;
     background: url(icon-help.png) no-repeat right center;
+    -moz-background-size: contain;
     background-size: contain;
-    font-size: 0;
     text-indent: -9000px;
+    font-size: 0;
 }
 
 /*#region HOME */
 #home .branding {
+    margin: 40px 0 20px 0;
+    height: 150px;
     background: url(logo-home.png) no-repeat;
-    background-size: contain;
     background-position: center center;
+    -moz-background-size: contain;
+    background-size: contain;
     text-indent: -9000px;
     font-size: 0px;
-    height: 150px;
-    margin: 40px 0 20px 0;
+}
+
+a.btn-host, a.btn-join, a.btn-begin, a.btn-cancel {
+    border: none!important;
+    background-color: transparent!important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: none!important;
+    text-indent: -9000px;
+    font-size: 0px;
 }
 
 a.btn-host, a.btn-join {
-    background-color: transparent!important;
-    border: none!important;
-    box-shadow: none!important;
-    background-size: 200px;  
-    background-position: center center;
-    background-repeat: no-repeat;
     height: 200px;
-    text-indent: -9000px;
-    font-size: 0px;
+    -moz-background-size: 200px;
+    background-size: 200px;
+}
+a.btn-begin, a.btn-cancel {
+    height: 180px;
+    -moz-background-size: 180px;
+    background-size: 180px;
 }
 
 #home li a::after {
+    width: 0;
+    height: 0;
+    background: none;
     content: "";
-    width:0;
-    height:0;
-    background:none;
 }
 
 .btn-host {
     background-image: url(btn-host.png);
 }
-.btn-host:active {
-    background-image: url(btn-host-press.png);
-}
+
+    .btn-host:active {
+        background-image: url(btn-host-press.png);
+    }
+
 .btn-join {
     background-image: url(btn-join.png);
 }
-.btn-join:active {
-    background-image: url(btn-join-press.png);
+
+    .btn-join:active {
+        background-image: url(btn-join-press.png);
+    }
+
+    
+.btn-begin {
+    background-image: url(btn-begin.png);
 }
 
+    .btn-begin:active {
+        background-image: url(btn-begin-press.png);
+    }
+
+.btn-cancel {
+    background-image: url(btn-cancel.png);
+}
+
+    .btn-cancel:active {
+        background-image: url(btn-cancel-press.png);
+    }
+
+
 #home .btn-settings {
-    background: url("icon-settings.png") no-repeat center center;
-    border: none;
-    background-size: 40px;
-    text-indent: -9000px;
-    font-size: 0px;
-    width: 40px;
-    height: 40px;
     position: absolute;
     right: 20px;
     bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: url("icon-settings.png") no-repeat center center;
+    -moz-background-size: 40px;
+    background-size: 40px;
+    text-indent: -9000px;
+    font-size: 0px;
 }
 
 /*#endregion */
@@ -149,7 +257,16 @@ a.btn-host, a.btn-join {
 }
 
 .playerlist li {
-    height:2.4em;
-    line-height:2.4em;
-    font-size:1.2em;
+    height: 2.4em;
+    font-size: 1.2em;
+    line-height: 2.4em;
+}
+
+.ui-popup-container [data-role="popup"] {
+    border-radius: 0;
+    border: none;
+    background: rgba(50, 50, 50, 0.8);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 40px;
 }
